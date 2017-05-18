@@ -1,7 +1,6 @@
 ﻿using MVC5Template.Abstraction.Data;
 using MVC5Template.Abstraction.Models;
 using MVC5Template.Abstraction.Services;
-using MVC5Template.Entities;
 using System.Web.Mvc;
 
 namespace MVC5Template.Web.Controllers
@@ -21,10 +20,13 @@ namespace MVC5Template.Web.Controllers
             IHomeModel model = this.HomeService.GetModel();
 
             // Test only.
-
             var forDelete = this.Data.TestEFEntitiesRepository.GetById(3);
-            this.Data.TestEFEntitiesRepository.Delete(forDelete);
-            this.Data.TestEFEntitiesRepository.Save();
+            if (forDelete != null)
+            {
+                this.Data.TestEFEntitiesRepository.Delete(forDelete);
+                this.Data.TestEFEntitiesRepository.Save();
+            }
+
             return View(model);
         }
 
