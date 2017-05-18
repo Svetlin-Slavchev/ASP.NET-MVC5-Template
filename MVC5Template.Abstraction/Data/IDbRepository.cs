@@ -4,7 +4,7 @@ using System.Linq;
 namespace MVC5Template.Abstraction.Data
 {
     public interface IDbRepository<T>
-        where T : class, IDeletableEntity
+        where T : class, IAuditInfo, IDeletableEntity
     {
         IQueryable<T> All();
 

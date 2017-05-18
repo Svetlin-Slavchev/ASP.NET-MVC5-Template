@@ -20,6 +20,10 @@ namespace MVC5Template.Web.Controllers
             IHomeModel model = this.HomeService.GetModel();
 
             // Test only.
+            this.Data.TestEFEntitiesRepository.Add(new Entities.TestEFEntity() { Name = "test", Value = "update" });
+            this.Data.TestEFEntitiesRepository.Save();
+
+            // Test only.
             var forDelete = this.Data.TestEFEntitiesRepository.GetById(3);
             if (forDelete != null)
             {

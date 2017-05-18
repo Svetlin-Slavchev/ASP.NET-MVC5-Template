@@ -5,7 +5,7 @@ namespace MVC5Template.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MVC5Template.Data.Data.ApplicationDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<MVC5Template.Data.Data.ApplicationDbContext>
     {
         public Configuration()
         {

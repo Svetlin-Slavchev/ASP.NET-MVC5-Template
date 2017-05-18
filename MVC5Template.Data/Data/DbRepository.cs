@@ -7,7 +7,7 @@ using System.Linq;
 namespace MVC5Template.Data.Data
 {
     public class DbRepository<T> : IDbRepository<T>
-        where T : class, IDeletableEntity
+        where T : class, IAuditInfo, IDeletableEntity
     {
         public DbRepository(IApplicationDbContext context)
         {

@@ -4,11 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVC5Template.Entities
 {
-    public class TestEFEntityTwo : DeletableEntity
+    public class TestEFEntityTwo : BasеEntity<int>
     {
-        [Key]
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         [ForeignKey("TestEFEntity")]

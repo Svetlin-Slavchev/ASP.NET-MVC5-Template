@@ -95,7 +95,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstraction\BasеEntity.cs" />
     <Compile Include="Abstraction\DeletableEntity.cs" />
+    <Compile Include="Abstraction\IAuditInfo.cs" />
     <Compile Include="Abstraction\IDeletableEntity.cs" />
     <Compile Include="EntityFramework\ApplicationUser.cs" />
     <Compile Include="EntityFramework\TestEFEntity.cs" />
