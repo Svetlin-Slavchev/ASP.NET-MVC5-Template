@@ -1,16 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MVC5Template.Abstraction.Data;
+using MVC5Template.Abstraction.Models;
+using MVC5Template.Abstraction.Services;
+using MVC5Template.Entities;
 using System.Web.Mvc;
 
 namespace MVC5Template.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        public IHomeService HomeService { get; set; }
+
+        public HomeController(IMVC5TemplateData data, IHomeService homeService)
+            : base(data)
+        {
+            this.HomeService = homeService;
+        }
+
         public ActionResult Index()
         {
-            return View();
+            IHomeModel model = this.HomeService.GetModel();
+
+            // Test only.
+
+            var forDelete = this.Data.TestEFEntitiesRepository.GetById(3);
+            this.Data.TestEFEntitiesRepository.Delete(forDelete);
+            this.Data.TestEFEntitiesRepository.Save();
+            return View(model);
         }
 
         public ActionResult About()

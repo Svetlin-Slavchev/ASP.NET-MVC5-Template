@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
+using MVC5Template.Data.Data;
+using MVC5Template.Entities.EntityFramework;
 using Owin;
-using MVC5Template.Web.Models;
+using System;
 
 namespace MVC5Template.Web
 {
